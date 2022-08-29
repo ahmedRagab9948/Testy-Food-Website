@@ -1,0 +1,786 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+:root {
+  --green: #27ae60;
+  --black: #192a56;
+  --light-color: #666;
+  --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* ############################# start navbar ########################################### */
+.nav {
+  box-shadow: var(--box-shadow);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  transition: 0.3s ease-in-out;
+  background-color: #fff;
+}
+.nav .container .navbar {
+  padding: 16px 0;
+  transition: 0.3s ease-in-out;
+}
+.nav .container .navbar .logo h3 a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--black);
+  font-weight: 700;
+  margin: 0;
+  transition: 0.3s ease-in-out;
+}
+.nav .container .navbar .logo h3 a i {
+  color: var(--green);
+  transition: 0.3s ease-in-out;
+}
+
+.nav .container .navbar .menu a {
+  text-decoration: none;
+  padding: 5px 18px;
+  border-radius: 5px;
+  color: var(--light-color);
+  transition: 0.3s ease-in-out;
+}
+.nav .container .navbar .menu a:hover,
+.nav .container .navbar .menu a.active {
+  background-color: var(--green);
+  color: #fff;
+}
+.nav .container .navbar .icons {
+  display: flex;
+}
+.nav .container .navbar .icons i {
+  margin-left: 15px;
+  background-color: #eee;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.nav .container .navbar .icons i:hover {
+  transform: rotate(360deg);
+  background-color: var(--green);
+  color: #fff;
+}
+.nav .container .navbar .icons #menu-bar {
+  display: none;
+}
+
+.search {
+  position: fixed;
+  top: -1500px;
+  left: 0;
+  z-index: 1005;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 0.3s ease-in-out;
+}
+.search.active {
+  top: 0;
+}
+.search input {
+  outline: unset;
+  border: none;
+  border-bottom: 2px solid #fff;
+  background-color: transparent;
+  width: 300px;
+  text-transform: none;
+  font-size: 22px;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 0;
+}
+.search input::placeholder {
+  color: #eee;
+}
+.search input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.search span {
+  font-size: 30px;
+  color: #eee;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.search span:hover {
+  color: var(--green);
+}
+.search #close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: #eee;
+  transition: 0.3s ease-in-out;
+}
+.search #close:hover {
+  color: #f00;
+  cursor: pointer;
+  transform: rotate(360deg);
+}
+
+@media (max-width: 991px) {
+  .nav .container .navbar {
+    padding: 10px 0;
+  }
+  .nav .container .navbar .menu {
+    position: absolute;
+    top: 60px;
+    left: -15px;
+    z-index: 1005;
+    width: 108%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    display: none;
+    transition: 0.3s ease-in-out;
+  }
+  .nav .container .navbar .menu.active {
+    display: flex;
+  }
+  .nav .container .navbar .menu a {
+    background-color: #ccc;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+  }
+  .nav .container .navbar .icons #menu-bar {
+    display: flex;
+  }
+}
+
+@media (max-width: 400px) {
+  .search input {
+    width: 250px;
+  }
+  .search span {
+    font-size: 28px;
+  }
+  .search #close {
+    right: 25px;
+    font-size: 30px;
+  }
+}
+@media (max-width: 355px) {
+  .nav .container .navbar .logo h3 {
+    font-size: 20px;
+  }
+  .nav .container .navbar .icons i {
+    margin-left: 15px;
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (max-width: 290px) {
+  .nav .container .navbar .icons i {
+    margin-left: 10px;
+  }
+}
+/* ############################# end navbar ########################################### */
+
+/* ############################# start hero section ########################################### */
+.hero {
+  padding: 70px 0 0;
+  height: 100vh;
+  transition: 0.3s ease-in-out;
+}
+.hero .container {
+  height: 100%;
+}
+.hero .container .row .desc {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+.hero .container .row .desc h3 {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--green);
+  transition: 0.3s ease-in-out;
+}
+.hero .container .row .desc h1 {
+  font-size: 58px;
+  font-weight: 700;
+  color: var(--black);
+  transition: 0.3s ease-in-out;
+}
+.hero .container .row .desc p {
+  font-size: 19px;
+  font-weight: 500;
+  max-width: 800px;
+  color: var(--light-color);
+  transition: 0.3s ease-in-out;
+}
+.hero .container .row .desc button {
+  width: 150px;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 7px;
+  background-color: var(--black);
+  color: #eee;
+  transition: 0.3s ease-in-out;
+}
+.hero .container .row .desc button:hover {
+  background-color: var(--green);
+  letter-spacing: 1px;
+  width: 160px;
+}
+
+@media (max-width: 991px) {
+  .hero .container .row .desc {
+    margin-top: 0;
+  }
+  .hero .container .row .desc h1 {
+    font-size: 36px;
+  }
+  .hero .container .row .desc p {
+    font-size: 17px;
+  }
+}
+/* ############################# end hero section ########################################### */
+
+/* ############################# start Dishes section ########################################### */
+.dishes {
+  padding: 50px 0;
+  background-color: #eee;
+  transition: 0.3s ease-in-out;
+}
+.dishes .container .sec-title {
+  margin-bottom: 50px;
+}
+.dishes .container .sec-title h4 {
+  transition: 0.3s ease-in-out;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 20px;
+}
+.dishes .container .sec-title h3 {
+  transition: 0.3s ease-in-out;
+  color: var(--black);
+  font-weight: 700;
+  font-size: 37px;
+}
+.dishes .container .row .content {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  padding: 1.7rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 30px;
+}
+.dishes .container .row .content .left {
+  position: absolute;
+  top: 20px;
+  left: -200px;
+  background-color: #eee;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.dishes .container .row .content .right {
+  position: absolute;
+  top: 20px;
+  right: -200px;
+  background-color: #eee;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.dishes .container .row .content .right:hover,
+.dishes .container .row .content .left:hover {
+  background-color: var(--green);
+  color: #fff;
+}
+.dishes .container .row .content:hover .left {
+  left: 20px;
+}
+.dishes .container .row .content:hover .right {
+  right: 20px;
+}
+.dishes .container .row .content img {
+  width: 100%;
+  height: 227px;
+  margin-bottom: 20px;
+  transition: 0.3s ease-in-out;
+}
+.dishes .container .row .content h3 {
+  transition: 0.3s ease-in-out;
+  color: var(--black);
+  font-weight: 700;
+}
+.dishes .container .row .content .rate {
+  margin-bottom: 25px;
+}
+.dishes .container .row .content .rate i {
+  transition: 0.3s ease-in-out;
+  color: var(--green);
+}
+.dishes .container .row .content .price h3 {
+  transition: 0.3s ease-in-out;
+  font-weight: 700;
+  color: var(--green);
+}
+.dishes .container .row .content .price button {
+  transition: 0.3s ease-in-out;
+  width: 160px;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 7px;
+  background-color: var(--black);
+  color: #fff;
+}
+.dishes .container .row .content .price button:hover {
+  background-color: var(--green);
+}
+
+@media (max-width: 991px) {
+  .dishes .container .row .content img {
+    height: unset;
+  }
+}
+@media (max-width: 500px) {
+  .dishes .container .row .content .price {
+    display: flex;
+    flex-direction: column;
+  }
+}
+/* ############################# end Dishes section ########################################### */
+
+/* ############################# start about section ########################################### */
+.about {
+  padding: 50px 0;
+  transition: 0.3s ease-in-out;
+}
+.about .container .sec-title {
+  margin-bottom: 30px;
+}
+.about .container .sec-title h4 {
+  transition: 0.3s ease-in-out;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 20px;
+}
+.about .container .sec-title h3 {
+  transition: 0.3s ease-in-out;
+  color: var(--black);
+  font-weight: 700;
+  font-size: 37px;
+}
+.about .container .row img {
+  width: 100%;
+}
+.about .container .row .info h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+.about .container .row .info p {
+  color: var(--light-color);
+}
+.about .container .row .info span {
+  color: var(--light-color);
+}
+.about .container .row .info .row .item {
+  background: #eee;
+  border-radius: 5px;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  padding: 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about .container .row .info .row .item h3 {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  color: var(--black);
+}
+.about .container .row .info .row .item h3 i {
+  color: var(--green);
+  font-size: 25px;
+  margin-right: 10px;
+}
+.about .container .row .info button {
+  width: 150px;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 7px;
+  background-color: var(--black);
+  color: #eee;
+  transition: 0.3s ease-in-out;
+}
+.about .container .row .info button:hover {
+  background-color: var(--green);
+  letter-spacing: 1px;
+  width: 160px;
+}
+/* ############################# end about section ########################################### */
+
+/* ############################# start menu section ########################################### */
+.sec-menu {
+  padding: 50px 0;
+  background-color: #eee;
+  transition: 0.3s ease-in-out;
+}
+.sec-menu .container .sec-title {
+  margin-bottom: 50px;
+}
+.sec-menu .container .sec-title h4 {
+  transition: 0.3s ease-in-out;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 20px;
+}
+.sec-menu .container .sec-title h3 {
+  transition: 0.3s ease-in-out;
+  color: var(--black);
+  font-weight: 700;
+  font-size: 37px;
+}
+.sec-menu .container .row .content {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 30px;
+}
+.sec-menu .container .row .content .right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.sec-menu .container .row .content .right:hover {
+  background-color: var(--green);
+  color: #fff;
+}
+.sec-menu .container .row .content img {
+  width: 100%;
+  height: 220px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+.sec-menu .container .row .content h3 {
+  transition: 0.3s ease-in-out;
+  color: var(--black);
+  font-weight: 700;
+}
+.sec-menu .container .row .content p {
+  color: var(--light-color);
+}
+.sec-menu .container .row .content .rate {
+  margin-bottom: 10px;
+}
+.sec-menu .container .row .content .rate i {
+  transition: 0.3s ease-in-out;
+  color: var(--green);
+}
+.sec-menu .container .row .content .price h3 {
+  transition: 0.3s ease-in-out;
+  font-weight: 700;
+  color: var(--green);
+  margin: 0;
+}
+.sec-menu .container .row .content .price button {
+  transition: 0.3s ease-in-out;
+  width: 160px;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 7px;
+  background-color: var(--black);
+  color: #fff;
+  margin-right: 15px;
+}
+.sec-menu .container .row .content .price button:hover {
+  background-color: var(--green);
+  width: 170px;
+  letter-spacing: 1px;
+}
+/* ############################# end menu section ########################################### */
+
+/* ############################# start Review section ########################################### */
+.review {
+  padding: 50px 0 15px;
+  transition: 0.3s ease-in-out;
+}
+.review .container .sec-title {
+  margin-bottom: 20px;
+}
+.review .container .sec-title h4 {
+  transition: 0.3s ease-in-out;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 20px;
+}
+.review .container .sec-title h3 {
+  transition: 0.3s ease-in-out;
+  color: var(--black);
+  font-weight: 700;
+  font-size: 37px;
+}
+.review .container .swiper .swiper-wrapper .swiper-slide .item {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  padding: 1rem 15px;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+.review .container .swiper .swiper-wrapper .swiper-slide .item .photo img {
+  width: 70px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.review .container .swiper .swiper-wrapper .swiper-slide .item .photo .info h4 {
+  margin: 0;
+  color: var(--black);
+  font-weight: 700;
+}
+.review .container .swiper .swiper-wrapper .swiper-slide .item .photo .info i {
+  color: var(--green);
+}
+.review .container .swiper .swiper-wrapper .swiper-slide .item p {
+  color: var(--light-color);
+  font-size: 13px;
+  margin: 0;
+}
+.review .container .swiper .swiper-wrapper .swiper-slide .item .qoute {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #ccc;
+  font-size: 50px;
+}
+/* ############################# end Review section ########################################### */
+
+/* ############################# start Order section ########################################### */
+.order {
+  padding: 50px 0;
+  background-color: #eee;
+  transition: 0.3s ease-in-out;
+}
+.order .container .sec-title {
+  margin-bottom: 50px;
+}
+.order .container .sec-title h4 {
+  transition: 0.3s ease-in-out;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 20px;
+}
+.order .container .sec-title h3 {
+  transition: 0.3s ease-in-out;
+  color: var(--black);
+  font-weight: 700;
+  font-size: 37px;
+}
+.order .container form {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  padding: 1rem 15px;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease-in-out;
+}
+.order .container form .row label {
+  margin-bottom: 3px;
+  color: var(--light-color);
+}
+.order .container form .row input,
+.order .container form .row textarea {
+  width: 100%;
+  background-color: #eee;
+  color: var(--black);
+  margin-bottom: 15px;
+  border-radius: 5px;
+  padding: 8px 10px;
+  border: 2px solid transparent;
+  font-size: 16px;
+  outline: unset;
+  text-transform: lowercase;
+  transition: 0.3s ease-in-out;
+  resize: none;
+}
+.order .container form .row input:focus,
+.order .container form .row textarea:focus {
+  border: 2px solid var(--green);
+}
+.order .container form .row button {
+  transition: 0.3s ease-in-out;
+  width: 160px;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 7px;
+  background-color: var(--black);
+  color: #fff;
+  margin-left: 15px;
+}
+.order .container form .row button:hover {
+  background-color: var(--green);
+  width: 170px;
+  letter-spacing: 1px;
+}
+/* ############################# end Order section ########################################### */
+
+/* ############################# start footer ########################################### */
+.footer {
+  padding-top: 40px;
+}
+.footer .container .row h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--black);
+  transition: 0.3s ease-in-out;
+}
+.footer .container .row ul {
+  list-style: none;
+  transition: 0.3s ease-in-out;
+}
+.footer .container .row ul li {
+  margin-bottom: 10px;
+  transition: 0.3s ease-in-out;
+}
+.footer .container .row ul li a {
+  text-decoration: none;
+  color: var(--light-color);
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+}
+.footer .container .row ul li a:hover {
+  color: var(--green);
+  letter-spacing: 1.5px;
+}
+.footer .container .maker {
+  width: 100%;
+  padding: 25px 0;
+  margin-top: 20px;
+  border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease-in-out;
+}
+.footer .container .maker h3 {
+  color: var(--black);
+  font-size: 22px;
+  font-weight: 700;
+  transition: 0.3s ease-in-out;
+}
+.footer .container .maker h3 span {
+  color: var(--green);
+  transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 400px) {
+  .footer .container .maker h3 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 340px) {
+  .footer .container .maker h3 {
+    font-size: 16px;
+  }
+}
+/* ############################# end footer ########################################### */
+
+/* ############################# start loud image ########################################### */
+.louder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+.louder.fade-out {
+  top: -1500px;
+  opacity: 0;
+}
+.louder img {
+  width: 400px;
+  transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 750px) {
+  .louder img {
+    width: 400px;
+  }
+}
+@media (max-width: 450px) {
+  .louder img {
+    width: 350px;
+  }
+}
+@media (max-width: 330px) {
+  .louder img {
+    width: 300px;
+  }
+}
+/* ############################# end loud image ########################################### */
